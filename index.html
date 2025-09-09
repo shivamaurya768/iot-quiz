@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h3 id="time">time out</h3></center>
+    <div id="form_main">
+    
+      <div id="form">
+
+          <input type="number"  placeholder="Enter a roll_no" id="roll" required><br> <br>
+          <input type="text"  placeholder="Enter your Name`" id="name" required><br><br>
+          <input type="text"  placeholder="Enter your father" id="f_name" required><br><br>
+          <input type="text"  placeholder="Enter course name" id="course" required><br><br>
+          <input type="submit" onclick="from_submit()" value="Continue test">
+
+      </div>
+    </div>
+  <div id="quiz">
+    <div id="main">
+        <div id="question"></div>
+    </div>
+    <center>
+    <Button class="btn" onclick="privious()"> Previous</Button>
+    <Button class="btn" onclick="next()">Next</Button>
+    <Button class="btn" onclick="submitQuiz()">Submit</Button>
+</center>
+
+  </div>
+  <div id="detail">
+  
+ <div id="info">
+    
+    <center>
+    <h3 id="feedback"></h3>
+    <h3 id="yourroll"></h3>
+    <h3 id="yourname"> </h3>
+    <h3 id="yourf_name"></h3>
+    <h3 id="yourcourse"></h3>
+    <h2>Developed by shivam maurya (A'Level) <a href="https://shivamaurya768.github.io/My-portfolio-/" target="_blank">My portfolio </a></a></h2>
+    <h2>teacher --> vikash pal</h2>
+    </center>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
