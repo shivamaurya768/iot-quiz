@@ -154,7 +154,7 @@ let q = [
             ["Q--> 20 which symbol is used in arduino to calculate module?",
                 {
                     "%": true,
-                    "# ": false,
+                    "* ": false,
                     "%": false,
                     "!": false
                 }
@@ -195,7 +195,7 @@ let q = [
                 {
                     "16": false,
                     "48": true,
-                    "64": true,
+                    "64": false,
                     "8": false
                 }
             ],
@@ -468,14 +468,16 @@ let q = [
                     total++;
                 }
             }
-            feedback.textContent = "Your total correct answers: " + total;
-            feedback.style.color = "blue";
-            document.getElementById("quiz").style.display="none";
-            document.getElementById("detail").style.display="block";
-document.getElementById("time").style.display="none";
-
-            showCorrectAnswers();
-            information();
+            if(confirm("Do you want a  submit in this test")){
+                feedback.textContent = "Your total correct answers: " + total;
+                feedback.style.color = "blue";
+                document.getElementById("quiz").style.display="none";
+                document.getElementById("detail").style.display="block";
+                document.getElementById("time").style.display="none";
+                showCorrectAnswers();
+                information();
+                
+            }
         }
 
         function showCorrectAnswers() {
@@ -519,7 +521,7 @@ function information(){
     document.getElementById("yourroll").innerHTML="Roll NO -> "+roll_no;
     document.getElementById("yourname").innerHTML="Name -> "+Name
     document.getElementById("yourf_name").innerHTML="Father Name -> "+f_name;
-    document.getElementById("yourcourse").innerHTML="Course Name-> "+course;
+    document.getElementById("yourcourse").innerHTML="Course NO -> "+course;
             
     }
         function from_submit(){
@@ -529,15 +531,47 @@ function information(){
             var course=document.getElementById("course").value;
             if(roll_no =="" || Name =="" || f_name =="" || course ==""){
                 alert("Please fill all info");
-                        return;            
+                return;
             }
             document.getElementById("quiz").style.display="block";
             document.getElementById("form").style.display="none";
         }
+
+// show pass 
+let check_box=document.getElementById("remember");
+let pass=document.getElementById("password")
+check_box.addEventListener('change', function(){
+    if(this.checked){
+        pass.type="text";
+    }
+    else{
+        pass.type="password";
+    }
+});
+// end show password
+
+//login user
+let user_name="shivam@123"
+let password=150305;
+let login_name=document.getElementById("user");
+function login_usar(){
+    if(pass.value==password && login_name.value==user_name){
+        document.getElementById("form_main").style.display="block";
+        document.getElementById("login").style.display="none";
+        
+
+    }else{
+        alert("invalid username and password");
+    }
+}
+
         let t=document.getElementById("time");
         let total_time=30*60;
-        let min=29;
+        let min=34;
         let sec=60;
+       
+
+
         function show_time(){
             if(sec==0){
                 t.innerHTML="Time out -->"+min+": "+sec;
@@ -549,16 +583,11 @@ function information(){
 
         }
     setInterval(show_time, 1000);
-    let time_up=60000*30;
+    let time_up=60000*35;
     setTimeout(function(){
         alert("your exam finished");
         t.style.display="none";
         submitQuiz();
         }, time_up)
             render();
-
             //information();
-
-
-
-
