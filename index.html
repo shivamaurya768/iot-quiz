@@ -7,17 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <center><h3 id="time">time out</h3></center>
+    <center><h3 id="time"></h3></center>
+  <!-- login form -->
+   <div id="login">
+   <div class="login-wrapper">
+        <div class="login-header">
+            Login Form
+        </div>
+        <div class="login-form">
+            <label for="username">Username *</label>
+            <input type="text" id="user"  placeholder="Enter your Username"  />
+
+            <label for="password">Password *</label>
+            <input type="password" id="password"  placeholder="Enter your Password" required />
+
+            <div class="remember">
+                <input type="checkbox" id="remember" name="remember" style="margin-right: 8px;">
+                <label for="remember">password show</label>
+            </div>
+
+            <button onclick="login_usar()">LOGIN</button>
+        </div>
+
+    </div>
+  </div>
+<!-- login from end -->
+
     <div id="form_main">
     
       <div id="form">
-          <h3>Chapter 1 IOT test </h3>
 
-          <input type="number"  placeholder="Enter a roll_no" id="roll" required><br> <br>
-          <input type="text"  placeholder="Enter your Name`" id="name" required><br><br>
-          <input type="text"  placeholder="Enter your father" id="f_name" required><br><br>
-          <input type="text"  placeholder="Enter course name" id="course" required><br><br>
-          <input type="submit" onclick="from_submit()" value="Continue test">
+          <input type="number"  placeholder="Enter a roll_no" id="roll" required  class="input_info"><br> <br>
+          <input type="text"  placeholder="Enter your Name`" id="name" required  class="input_info"><br><br>
+          <input type="text"  placeholder="Enter your father" id="f_name" required  class="input_info"><br><br>
+          <input type="text"  placeholder="Enter course name" id="course" required class="input_info"><br><br>
+          <input type="submit" onclick="from_submit()"  value="Continue test" id="info_submit">
 
       </div>
     </div>
@@ -49,6 +73,4 @@
 </div>
   <script src="script.js"></script>
 </body>
-
 </html>
-
