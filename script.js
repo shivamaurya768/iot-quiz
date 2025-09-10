@@ -528,6 +528,7 @@ function information(){
             var course=document.getElementById("course").value;
             if(roll_no =="" || Name =="" || f_name =="" || course ==""){
                 alert("Please fill all info");
+                        return;            
             }
             document.getElementById("quiz").style.display="block";
             document.getElementById("form").style.display="none";
@@ -556,3 +557,4 @@ function information(){
             render();
 
             //information();
+
