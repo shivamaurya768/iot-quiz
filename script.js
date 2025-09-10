@@ -154,7 +154,7 @@ let q = [
             ["Q--> 20 which symbol is used in arduino to calculate module?",
                 {
                     "%": true,
-                    "* ": false,
+                    "# ": false,
                     "%": false,
                     "!": false
                 }
@@ -515,10 +515,10 @@ function information(){
     var Name=document.getElementById("name").value;
     var f_name=document.getElementById("f_name").value;
     var course=document.getElementById("course").value;
-    document.getElementById("yourroll").innerHTML="noll NO -> "+roll_no;
+    document.getElementById("yourroll").innerHTML="Roll NO -> "+roll_no;
     document.getElementById("yourname").innerHTML="Name -> "+Name
     document.getElementById("yourf_name").innerHTML="Father Name -> "+f_name;
-    document.getElementById("yourcourse").innerHTML="Roll NO -> "+course;
+    document.getElementById("yourcourse").innerHTML="Course Name-> "+course;
             
     }
         function from_submit(){
@@ -554,4 +554,5 @@ function information(){
         submitQuiz();
         }, time_up)
             render();
+
             //information();
