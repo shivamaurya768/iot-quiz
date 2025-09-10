@@ -33,6 +33,7 @@ button:hover{
  display:none;   
 }
 #form{
+    color:white;
     background:rebeccapurple;
     text-align: center;
     display: inline-block;
@@ -128,3 +129,4 @@ button:active{
     background-color: rgb(255, 0, 0);
 }
 }
+
