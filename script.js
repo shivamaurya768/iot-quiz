@@ -468,13 +468,16 @@ let q = [
                     total++;
                 }
             }
-            feedback.textContent = "Your total correct answers: " + total;
+            if(confirm("Do you want submit this test"){
+                        feedback.textContent = "Your total correct answers: " + total;
             feedback.style.color = "blue";
             document.getElementById("quiz").style.display="none";
             document.getElementById("detail").style.display="block";
 
             showCorrectAnswers();
             information();
+
+            }
         }
 
         function showCorrectAnswers() {
@@ -557,4 +560,5 @@ function information(){
             render();
 
             //information();
+
 
