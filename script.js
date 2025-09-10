@@ -155,7 +155,7 @@ let q = [
                 {
                     "%": true,
                     "* ": false,
-                    "%": false,
+                    "/": false,
                     "!": false
                 }
             ],
@@ -591,3 +591,4 @@ function login_usar(){
         }, time_up)
             render();
             //information();
+
