@@ -472,6 +472,7 @@ let q = [
             feedback.style.color = "blue";
             document.getElementById("quiz").style.display="none";
             document.getElementById("detail").style.display="block";
+document.getElementById("time").style.display="none";
 
             showCorrectAnswers();
             information();
@@ -557,6 +558,7 @@ function information(){
             render();
 
             //information();
+
 
 
 
