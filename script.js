@@ -55,7 +55,7 @@ let q = [
                     "6 Element": false
                 }
             ],
-            ["Q-->8 Which of the following is not an appcation of IOT ",
+            ["Q-->8 Which of the following is not an application of IOT ",
                 {
                     "Arduino": true,
                     "smart Grid": false,
@@ -217,7 +217,7 @@ let q = [
             ],
             ["Q-->28 What is the first IoT device that was the made by John Romkey??",
                 {
-                    "Toaste": true,
+                    "Toaster": true,
                     "Sensor": false,
                     "Mobile phone": false,
                     "NONE": false
@@ -366,7 +366,7 @@ let q = [
                     "DPROM": true
                 }
             ],
-            ["Q-->47 The LPWAP stands for?",
+            ["Q-->47 The LPWAN stands for?",
                 {
                     "low power wide area network": true,
                     "low bit rate": false,
@@ -382,7 +382,7 @@ let q = [
                     "None of these": false
                 }
             ],
-            ["Q-->49 is heard of computer system?",
+            ["Q-->49 ___is heard of computer system?",
                 {
                     "memory": false,
                     "I/O": false,
@@ -591,4 +591,5 @@ function login_usar(){
         }, time_up)
             render();
             //information();
+
 
