@@ -33,44 +33,74 @@
   </div>
 <!-- login from end -->
 
+<!-- form user data get -->
     <div id="form_main">
-    
-      <div id="form">
-
-          <input type="number"  placeholder="Enter a roll_no" id="roll" required  class="input_info"><br> <br>
-          <input type="text"  placeholder="Enter your Name`" id="name" required  class="input_info"><br><br>
-          <input type="text"  placeholder="Enter your father" id="f_name" required  class="input_info"><br><br>
-          <input type="text"  placeholder="Enter course name" id="course" required class="input_info"><br><br>
-          <input type="submit" onclick="from_submit()"  value="Continue test" id="info_submit">
+    <form method="post" name='google-sheet'>
+      <div id="form" name="">
+          <input type="number"  placeholder="Enter a roll_no" id="roll" required  class="input_info" name="Roll No"><br> <br>
+          <input type="text"  placeholder="Enter your Name`" id="name" required  class="input_info" name="Name"><br><br>
+          <input type="text"  placeholder="Enter your father" id="f_name" required  class="input_info" name="Father Name"><br><br>
+          <input type="text"  placeholder="Enter course name" id="course" required class="input_info" name="Course"><br><br>
+          <input type="text" readonly id="feedback" class="input_info" name="Result">
+          <button type="submit" onclick="from_submit()"  id="info_submit" name="submit">submit </button>
 
       </div>
+      </form>
     </div>
+<!-- end input detials -->
+
+
+<!-- start quiz -->
   <div id="quiz">
+    
     <div id="main">
         <div id="question"></div>
     </div>
     <center>
     <Button class="btn" onclick="privious()"> Previous</Button>
     <Button class="btn" onclick="next()">Next</Button>
-    <Button class="btn" onclick="submitQuiz()">Submit</Button>
+    
 </center>
 
   </div>
+<!-- quiz end -->
+ 
+<!-- start how solov  -->
+<div id="hh_solov">
+  <div id="h_solov"></div>
+  <Button class="btn" onclick="submitQuiz()">Submit</Button>
+  
+</div>
+
+
+<!-- end how solov  -->
   <div id="detail">
   
  <div id="info">
     
     <center>
-    <h3 id="feedback"></h3>
-    <h3 id="yourroll"></h3>
-    <h3 id="yourname"> </h3>
-    <h3 id="yourf_name"></h3>
-    <h3 id="yourcourse"></h3>
+      <h3>Please read all Rule carefully</h3>
+      </center>
+    <ol>
+      <li>aapke pass total (40m) hai all question solve karne ke liye time display ho raha hai  </li>
+      <li> question ceraful read kare tab click correct option kyu ek bar aap ne aagar option choose kar liya <br>
+      fir use change nahi kar skate 
+      </li>
+      <li>quiz submit karne par ek form aayega use sabhi box ko fill kare</li>
+      <li>aap ne kitane question solov kar liye quiz ke bottom me diya gaya hai jo color green wo question solov hai jo red color <br>
+      wo question solov nahi hai.
+      </li>
+      <li>last me jab aap form fill kar le tab submit par click karane ke bad 10 second wait kare ek pop aayega usame ok par click kare</li>
+      <li>aagar aap ne sabhi Rule sahi se read kar liye ho tab check box par click </li>
+      <br><br>
+      <input type="checkbox" id="check_box"><br> <br>
+      <button id="info__btn" onclick="quiz_start()">Continue Test</button>
+    </ol>
     <h2>Developed by shivam maurya (A'Level) <a href="https://shivamaurya768.github.io/My-portfolio-/" target="_blank">My portfolio </a></a></h2>
     <h2>teacher --> vikash pal</h2>
-    </center>
+    
   </div>
 </div>
   <script src="script.js"></script>
-</body>
+  
 </html>
