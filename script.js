@@ -411,6 +411,16 @@ let q = [
         que.appendChild(h2);
 
         let buttons = [];
+        let s_btn;
+        let h_solov=document.getElementById("h_solov");
+        for(let i=1;i<=q.length;i++){
+            s_btn=document.createElement("button");
+             s_btn.id=`sbtn${i}`;
+            s_btn.className="sbtn";
+            s_btn.textContent=i;
+            h_solov.appendChild(s_btn);
+        }
+
         for (let i = 0; i < 4; i++) {
             let btn = document.createElement("button");
             btn.className = "b";
@@ -418,6 +428,7 @@ let q = [
             que.appendChild(btn);
             buttons.push(btn);
         }
+    
 
         function render() {
             let current = q[index];
@@ -429,9 +440,14 @@ let q = [
                 buttons[i].disabled = answered[index];
                 buttons[i].style.backgroundColor = ""; 
             }
-            feedback.textContent = "";
+          
         }
 
+
+
+
+
+        
         function next() {
             index++;
             if (index >= q.length) {
@@ -453,6 +469,8 @@ let q = [
             let options = q[index][1];
             selectedAnswers[index] = selectedAns;
             answered[index] = true;
+            let temp=index+1;
+            document.getElementById(`sbtn${temp}`).style.backgroundColor="green"
             if (options[selectedAns]) {
                 total++;
             }
@@ -469,13 +487,14 @@ let q = [
                 }
             }
             if(confirm("Do you want a  submit in this test")){
-                feedback.textContent = "Your total correct answers: " + total;
-                feedback.style.color = "blue";
+                 feedback.value = total;
+                // feedback.style.color = "blue";
+                document.getElementById("form_main").style.display="block";
                 document.getElementById("quiz").style.display="none";
-                document.getElementById("detail").style.display="block";
+                document.getElementById("hh_solov").style.display="none";
+                
                 document.getElementById("time").style.display="none";
                 showCorrectAnswers();
-                information();
                 
             }
         }
@@ -513,17 +532,31 @@ let q = [
                 showCorrectAnswers();
             }
         }
-function information(){
-    var roll_no=document.getElementById("roll").value;
-    var Name=document.getElementById("name").value;
-    var f_name=document.getElementById("f_name").value;
-    var course=document.getElementById("course").value;
-    document.getElementById("yourroll").innerHTML="Roll NO -> "+roll_no;
-    document.getElementById("yourname").innerHTML="Name -> "+Name
-    document.getElementById("yourf_name").innerHTML="Father Name -> "+f_name;
-    document.getElementById("yourcourse").innerHTML="Course NO -> "+course;
-            
+        
+//rule start  
+let check=document.getElementById("check_box");
+let btn_info=document.getElementById("info__btn");
+check.addEventListener('change', function(){
+    if(this.checked){
+        btn_info.style.display="block";
     }
+    else{
+        btn_info.style.display="none";
+    }
+});
+
+function quiz_start(){
+    document.getElementById("quiz").style.display="block";
+    document.getElementById("hh_solov").style.display="block";
+    document.getElementById("detail").style.display="none";
+}
+
+
+
+
+
+// rule end 
+
         function from_submit(){
             var roll_no=document.getElementById("roll").value;
             var Name=document.getElementById("name").value;
@@ -533,9 +566,10 @@ function information(){
                 alert("Please fill all info");
                 return;
             }
-            document.getElementById("quiz").style.display="block";
-            document.getElementById("form").style.display="none";
+            document.getElementById("quiz").style.display="none";
+            document.getElementById("form").style.display="block";
         }
+    
 
 // show pass 
 let check_box=document.getElementById("remember");
@@ -551,13 +585,14 @@ check_box.addEventListener('change', function(){
 // end show password
 
 //login user
-let user_name="shivam@123"
-let password=979438;
+let user_name=""
+let password=0;
 let login_name=document.getElementById("user");
 function login_usar(){
     if(pass.value==password && login_name.value==user_name){
-        document.getElementById("form_main").style.display="block";
+        document.getElementById("detail").style.display="block";
         document.getElementById("login").style.display="none";
+        //document.getElementById("quiz").style.display="block";
         
 
     }else{
@@ -594,3 +629,13 @@ function login_usar(){
 
 
 
+// API call for google sheets
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyun6wj9Dyv1gFmTJNwcqVjhzWgEC6lXxxDWuzJiVR5ldpDvYO6E3kKIdTA22EGrBu8/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks you ! your test submited"))
+                .catch(error => console.error('Error!', error.message))
+            })
