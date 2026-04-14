@@ -586,7 +586,7 @@ check_box.addEventListener('change', function(){
 
 //login user
 let user_name="shivam@123"
-let password="shivam12";
+let password="112233";
 let login_name=document.getElementById("user");
 function login_usar(){
     if(pass.value==password && login_name.value==user_name){
